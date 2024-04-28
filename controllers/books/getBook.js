@@ -6,7 +6,7 @@ const getBook = async(req,res)=>{
     const skip = limit*(page-1);
 
     try {
-        const Book = new bookModel.find().skip(skip).limit(limit);
+        const Book = await bookModel.find().skip(skip).limit(limit);
         res.json({Book})
     } 
     catch (error) {

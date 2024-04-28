@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 
 const registerUser = async(req,res)=>{
-    const {email,password,name} = req.body;
+    const {email,password,username} = req.body;
 
     try {
         const existingUser = await userModel.findOne({email});
@@ -15,7 +15,7 @@ const registerUser = async(req,res)=>{
 
         const newUser = userModel({
             email,
-            name,
+            username,
             password:hashedPassword
         });
 

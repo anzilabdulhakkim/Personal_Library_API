@@ -6,7 +6,7 @@ const auth = (req,res,next)=>{
     if(token){
         jwt.verify(token,process.env.SECRET_KEY,(err,decoded)=>{
             req.body.userID = decoded.userID;
-            req.body.name = decoded.name;
+            req.body.username = decoded.username;
             next();
         });
     }
