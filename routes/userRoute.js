@@ -5,7 +5,7 @@ const registerUser = require('../controllers/users/registerUser');
 const userRoute = Router();
 
 userRoute.get("/",getUser);
-userRoute.post("/register",loginUser);
-userRoute.post("/login",registerUser);
+userRoute.post("/register",registerUser);
+userRoute.post("/login",loginUser);
 
 module.exports = userRoute;
